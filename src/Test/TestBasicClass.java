@@ -18,7 +18,8 @@ public class TestBasicClass {
 	}
 
 
-	//test the function getHandShootingLocation works
+	//test the function getHandShootingLocation works at an angle 0 and 20
+	//david
 	@Test
 	public void testGetHandShootingLocation(){
 		Location place1 = mainWindow.playingArea.david.getHandShootingLocation(0);
@@ -32,17 +33,18 @@ public class TestBasicClass {
 		Assert.assertEquals(place2.y, 265.0);
 	}
 
-	//test class Rock
+	//test class Rock-----------------------------------------------
 	//test the function updateRockLocation works
 	@Test
 	public void testUpdateRockLocation(){
 		mainWindow.playingArea.rock.location.setX(50);
 		mainWindow.playingArea.rock.location.setY(50);
-		mainWindow.playingArea.rock.speed = 20;
+		mainWindow.playingArea.rock.speed = 75;
 		mainWindow.playingArea.rock.angle = 30;
 		mainWindow.playingArea.rock.updateRockLocation(mainWindow.playingArea.theGraphics);
-		Assert.assertEquals(mainWindow.playingArea.rock.location.getX(), 60);
-		Assert.assertEquals(mainWindow.playingArea.rock.location.getY(), 40);
+		//Test that incrementing the rock by time unit places the rock in the correct next position
+		Assert.assertEquals(Math.floor(mainWindow.playingArea.rock.locationForTesting.getX()), 56.0);
+		Assert.assertEquals(Math.floor(mainWindow.playingArea.rock.locationForTesting.getY()), 53.0);
 	}
 
 	//test class Sling 1of2

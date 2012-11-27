@@ -32,6 +32,7 @@ public class David {
 	
 		
 	public Location getHandShootingLocation(int angle){
+
 		int y=(int) (shootingHandLocation.getY() - armLength*Math.acos(Math.toRadians(angle)));
 		int x=(int) (shootingHandLocation.getX() - armLength*Math.asin(Math.toRadians(angle)));
 //		System.out.println("angle= " + angle);
