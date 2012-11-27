@@ -22,10 +22,9 @@ public class TestBasicClass {
 	//david
 	@Test
 	public void testGetHandShootingLocation(){
+		//This test makes sure that davids hand can move at two different angles
 		Location place1 = mainWindow.playingArea.david.getHandShootingLocation(0);
-//		System.out.println("testing crap1");
 		Assert.assertEquals(place1.x, 150.0);
-//		System.out.println("testing crap2");
 		Assert.assertEquals(place1.y, 258.0);
 
 		Location place2 = mainWindow.playingArea.david.getHandShootingLocation(20);
@@ -51,8 +50,7 @@ public class TestBasicClass {
 	//test the function updateAngle works
 	@Test
 	public void testUpdateAngle(){
-//		System.out.println("x is = " + mainWindow.playingArea.sling.endOfSling.getX());
-//		System.out.println("y is = " + mainWindow.playingArea.sling.endOfSling.getY());
+		//test that updating of the sling when changing the launch trajectory
 		mainWindow.playingArea.sling.endOfSling.setX(230);
 		mainWindow.playingArea.sling.endOfSling.setY(290);
 		mainWindow.playingArea.sling.updateAngle(0);
@@ -61,7 +59,7 @@ public class TestBasicClass {
 	}
 
 	//test class Sling 2of2
-	//test the funciton drawNextEndOfSlingLocation works
+	//test the function drawNextEndOfSlingLocation works
 	@Test
 	public void testDrawNextEndOfSlingLocation(){
 		//check moving to the left down the sling without an angle
@@ -82,6 +80,7 @@ public class TestBasicClass {
 	//test class PlayingArea
 	@Test
 	public void testSetAngle(){
+		//these tests make sure that the launching angle can be set correct
 		//test 45 degree angle
 		mainWindow.playingArea.lineStart.setX(15);
 		mainWindow.playingArea.lineStart.setY(0);
@@ -98,7 +97,7 @@ public class TestBasicClass {
 		mainWindow.playingArea.setAngle();
 		Assert.assertEquals(mainWindow.playingArea.angle, 0);
 
-		//test 30 degree angle   3-4-5 triangle
+		//test 30 degree angle   30 60 90 triangle
 		mainWindow.playingArea.lineStart.setX(86);//15
 		mainWindow.playingArea.lineStart.setY(0);
 		mainWindow.playingArea.lineEnd.setX(0);
